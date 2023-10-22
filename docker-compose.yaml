@@ -4,7 +4,17 @@ services:
     build: ./api
     container_name: api_c
     ports:
-      - "3000:3000"
+      - "4000:4000"
     volumes:
       - ./api:/app
       - /app/node_modules
+  frontend:
+    build: ./frontend
+    container_name: frontend_c
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
